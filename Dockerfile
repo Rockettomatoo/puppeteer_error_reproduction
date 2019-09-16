@@ -13,7 +13,10 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
 
 ADD index.js package.json /app/
 
-RUN cat /etc/alpine-release && node --version && yarn --version && cd /app && yarn install
+RUN echo Alpine version: $(cat /etc/alpine-release) && \
+  echo node $(node --version) && \
+  echo yarn $(yarn --version) && \
+  cd /app && yarn install
 
 WORKDIR /app
 ENTRYPOINT [ "node", "index.js" ]

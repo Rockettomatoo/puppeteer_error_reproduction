@@ -18,6 +18,10 @@ yarn build && yarn build:run
 npm run build && npm run build:run
 ```
 
-## Findings
+## Reproduction
 
-If I build the docker image with `node:8-alpine` as base image, puppeteer seems to work. If I build the docker image with `docker:8.9.4-alpine` as base image tho, I get the error mentioned above.
+When you change the base image from `node:8-alpine` to `node:8.9.4-alpine` it throws the above mentioned error.  
+The only thing I found was the difference in the `/etc/alpine-version`:
+
+- `node:8-alpine`: alpine version `3.9.4`
+- `node:8.9.4-alpine`: alpine verion `3.6.2`
