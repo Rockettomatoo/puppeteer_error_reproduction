@@ -1,0 +1,14 @@
+{
+  "name": "puppeteer_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "build": "docker build -t puppeteer_test .",
+    "build:run": "docker run -it --rm --name puppeteer_test puppeteer_test"
+  },
+  "dependencies": {
+    "puppeteer": "^1.20.0"
+  }
+}
